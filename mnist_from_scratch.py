@@ -43,7 +43,8 @@ def forward_propagation(W1, b1, W2, b2, X):
 
 # 1 => [0 1 0 0 0 0 0 0 0 0]
 def labelToArray(Y):
-    
+    labelArray = np.zeros((Y.size, Y.max() + 1))
+    labelArray[np.arrange(Y.size), Y] = 1
 
-#def back_prop(Z1, A1, Z2, A2, W1, W2, X, Y):
-    
+def back_prop(Z1, A1, Z2, A2, W1, W2, X, Y):
+        
